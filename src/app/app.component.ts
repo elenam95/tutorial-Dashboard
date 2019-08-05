@@ -6,12 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto';
-  numero: number;
-  resultado: number;
-  Duplicar (){
-    console.log ('Voy a duplicar');
-    this.resultado = this.numero*2;
-    console.log (this.resultado);
-  }
+  title = 'proyecto'; 
 }
