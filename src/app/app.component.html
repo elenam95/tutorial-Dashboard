@@ -5,13 +5,20 @@
   </h1>
 </div>
 
-<form (ngSubmit)="Duplicar();">
+<h2>
+  Introduce 2 numeros 
+</h2>
+
+<form (ngSubmit)="Multiplicar();">
 
   <div>
-    <input type="number" id="numero" name="numero" placeholder="escribe un numero" required [(ngModel)]="numero">
+    <input type="number" id="numero1" name="numero1" placeholder="escribe un numero" required [(ngModel)]="numero1">
+  </div>
+  <div>
+    <input type="number" id="numero2" name="numero2" placeholder="escribe un numero" required [(ngModel)]="numero2">
   </div>
 
-  <button>Duplicar</button>
+  <button>Multiplicar</button>
 
 </form>
 
