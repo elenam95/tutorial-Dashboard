@@ -40,6 +40,10 @@ export class ProfesorComponent implements OnInit {
     this.lista= this.servicioLista.PonPersona(new Persona(this.nombre, this.pass, this.rol, this.puntos));
   }
 
+  Ordenaralfabeticamente(){
+    this.lista=this.servicioLista.Ordenaralfabeticamente();
+  }
+
  /* Resetearpuntos(){
     
     for (this.contador=0; this.contador <this.lista.length; this.contador++){

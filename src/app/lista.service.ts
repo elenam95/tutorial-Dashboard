@@ -41,4 +41,13 @@ export class ListaService {
      this.lista.push(persona); //funcion que añade a la persona 
      return this.lista; 
    }
+
+   Ordenaralfabeticamente():Persona[]{
+    this.lista=this.lista.sort( 
+      function(obj1,obj2)  {
+        return obj1.nombre.localeCompare(obj2.nombre);
+      })
+
+    return this.lista;
+   }
 }
