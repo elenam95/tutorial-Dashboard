@@ -18,13 +18,7 @@
 
 <form (ngSubmit)="Pon();">
     <button>Crear nuevo alumno</button>
-    <div>
-            <label>Rol:</label>
-            <select name="rol" required[(ngModel)]="rol">
-                <option value="Alumno">Alumno</option>
-                <option value="Profesor">Profesor</option>
-            </select>
-        </div>
+   
     <div>
       <label>Nombre:</label>
       <input type="text" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
@@ -36,7 +30,14 @@
     <div>
             <label>Puntos:</label>
             <input type="number" name="puntos" placeholder="escribe los puntos" value="0" required [(ngModel)]="puntos">
-           </div>
+    </div>
+    <div>
+        <label>Rol:</label>
+        <select name="rol" required [(ngModel)]="rol">
+            <option value="Alumno">Alumno</option>
+            <option value="Profesor">Profesor</option>
+        </select>
+    </div>
     
    
     
