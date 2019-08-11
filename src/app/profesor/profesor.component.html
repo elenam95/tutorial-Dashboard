@@ -1,48 +1,41 @@
-<button (click)= "Mostrar()">Mostrar lista de persona</button>
-<!--<button (click)= "Resetearpuntos()">Resetear puntos</button>-->
-<button (click)= "Ordenarpuntos()">Ordenar por puntos</button>
-<button (click)= "Ordenaralfabeticamente()">Ordenar alumnos alfabeticamente</button>
-<div>
-    <h2> LISTA DE ALUMNOS </h2>
-    <ul *ngFor="let persona of lista"> <!--iterar: crear un elemento para cada persona de la lista-->
-        <li *ngIf="persona.rol=== 'Alumno'">  <!--condición: solo si la persona es un alumno-->
-            Nombre: {{persona.nombre}} - Puntos: {{persona.puntos}}
-            <button (click)= "Incrementar(persona.nombre)">Añadir punto</button>
-            <button (click)= "Eliminarpersona(persona.nombre)">Eliminar persona</button>
-            
-        </li>
-    </ul>
-</div>
 
-<h2> AÑADIR NUEVO ALUMNO </h2>
+  <div class="container">
+    <h1 class="text-success"> LISTADO DE ALUMNOS </h1>
+    <table class="table">
+        <thead>
+          <tr class="font-weight-bold text-primary">
+            <th>NOMBRE</th>
+            <th>PUNTOS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info" *ngFor="let persona of lista">
+            <td>{{persona.nombre}}</td>
+            <td><span class="badge">{{persona.puntos}}</span></td>
+            <td><button class="btn btn-success" (click)= "Incrementar(persona.nombre)"> <span class="glyphicon glyphicon-plus"></span> Plus</button></td>
+            <td><button class="btn btn-danger" (click)= "Eliminarpersona(persona.nombre)"> <span class="glyphicon glyphicon-trash"></span> Trash </button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary btn-lg btn-block"(click)= "Mostrar()">Mostrar lista de persona</button>
+      <!--<button (click)= "Resetearpuntos()">Resetear puntos</button>-->
+      <button class="btn btn-primary btn-lg btn-block" (click)= "Ordenarpuntos()">Ordenar por puntos</button>
+      <!--<button (click)= "Ordenaralfabeticamente()">Ordenar alumnos alfabeticamente</button>-->
+  </div>
 
-
-<form (ngSubmit)="Pon();">
-    <button>Crear nuevo alumno</button>
-   
-    <div>
-      <label>Nombre:</label>
-      <input type="text" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
-    </div>
-    <div>
-        <label>Contraseña:</label>
-        <input type="text" name="pass" placeholder="escribe la Contraseña" required [(ngModel)]="pass">
-    </div>
-    <div>
-            <label>Puntos:</label>
-            <input type="number" name="puntos" placeholder="escribe los puntos" value="0" required [(ngModel)]="puntos">
-    </div>
-    <div>
-        <label>Rol:</label>
-        <select name="rol" required [(ngModel)]="rol">
-            <option value="Alumno">Alumno</option>
-            <option value="Profesor">Profesor</option>
-        </select>
-    </div>
-    
-   
-    
-  </form>
-  
-
-  
+  <div class="container">
+    <h1 class="text-success"> NUEVA PERSONA </h1>
+    <form class="form-inline" (ngSubmit)="Pon();">
+          <input type="text" class="form-control mb-2 mr-sm-2" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
+          <input type="text" class="form-control mb-2 mr-sm-2" name="pass" placeholder="escribe la Contraseña" required [(ngModel)]="pass">
+          <input type="number" class="form-control mb-2 mr-sm-2" name="puntos" placeholder="escribe los puntos" value="0" required [(ngModel)]="puntos">
+          <select class="custom-select mb-2 mr-sm-2" name="rol" required [(ngModel)]="rol">
+                <option selected>Rol...</option>
+                <option value="Alumno">Alumno</option>
+                <option value="Profesor">Profesor</option>
+            </select>
+            <button type="submit" class="btn btn-primary mb-2">Crear nuevo alumno</button>
+       
+        
+      </form>
+  </div>
