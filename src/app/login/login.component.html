@@ -1,0 +1,12 @@
+<form (ngSubmit)="Autentificar();">
+       
+       
+        <div>
+          <label>Nombre:</label>
+          <input type="text" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
+          <label>Contraseña:</label>
+          <input type="password" name="pass" placeholder="escribe la Contraseña" required [(ngModel)]="pass">
+        </div>
+        <button>Login</button>
+
+  </form>

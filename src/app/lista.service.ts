@@ -50,4 +50,30 @@ export class ListaService {
 
     return this.lista;
    }
+
+   Autentificar(nombre: string, pass: string): Persona{
+      let user: Persona[]=[];
+      user= this.lista.filter(persona=> persona.nombre==nombre && persona.pass== pass);
+
+      if (user.length === 0)
+      {
+        console.log("no existe este usuario");
+        return null;
+        
+      }
+      else
+      {
+        console.log("existe este usuario");
+        return user[0]; 
+      }
+
+   }
+
+   PonPass(nombre: string, pass: string){
+      this.lista.filter(persona=> persona.nombre === nombre)[0].pass= pass;
+   }
+
+   DamePersona(nombre: string): Persona{
+     return this.lista.filter(persona => persona.nombre === nombre)[0];
+   }
 }

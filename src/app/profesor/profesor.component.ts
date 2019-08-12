@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Persona } from '../Persona';
 import {ListaService} from '../lista.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-profesor',
@@ -15,7 +16,8 @@ export class ProfesorComponent implements OnInit {
   pass: string;
   rol:string;
   puntos: number;
-  constructor(private servicioLista: ListaService) { }
+  constructor(private servicioLista: ListaService, 
+              private location: Location) { }
 
   ngOnInit() {
   }
@@ -42,6 +44,11 @@ export class ProfesorComponent implements OnInit {
 
   Ordenaralfabeticamente(){
     this.lista=this.servicioLista.Ordenaralfabeticamente();
+  }
+
+  GoBack(){ //funcion para ir hacia la pagina de atras
+    this.location.back();
+    // es necesario el import y una instancia: el private location en el constructor 
   }
 
  /* Resetearpuntos(){
