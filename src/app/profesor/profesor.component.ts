@@ -8,7 +8,7 @@ import {ListaService} from '../lista.service';
   styleUrls: ['./profesor.component.css']
 })
 export class ProfesorComponent implements OnInit {
-
+  displayedColumns: string[]=['nombre', 'puntos', 'incrementar', 'eliminar'];
   lista: Persona[] = []; //declaramos una lista de personas vacias
   contador= 0;
   nombre: string;
@@ -21,7 +21,10 @@ export class ProfesorComponent implements OnInit {
   }
 
   Mostrar(){
+    console.log ('Voy a mostrar');
     this.lista = this.servicioLista.Mostrar();
+    console.log ('mostrado');
+
   }
 
   Incrementar(nombre: string){
@@ -33,11 +36,15 @@ export class ProfesorComponent implements OnInit {
   }
 
   Ordenarpuntos(){
+    console.log ('voy a ordenar');
     this.lista=this.servicioLista.Ordenarpuntos();
+    this.lista=this.servicioLista.Eliminarpersona("blanco");
+    console.log ('ordenado');
   }
 
   Pon(){
     this.lista= this.servicioLista.PonPersona(new Persona(this.nombre, this.pass, this.rol, this.puntos));
+    this.lista=this.servicioLista.Eliminarpersona("blanco");
   }
 
   Ordenaralfabeticamente(){

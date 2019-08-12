@@ -3,3 +3,9 @@ h2{
     font-family: Arial;
     font-weight: lighter;
   }
+  .material-icons.orange600 { color: #FB8C00; }
+  .material-icons.green { color: rgb(50, 251, 0); }
+
+  table{
+    width: 25%;
+  }
